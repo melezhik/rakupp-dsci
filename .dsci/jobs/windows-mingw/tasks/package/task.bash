@@ -1,3 +1,5 @@
 #!/bin/bash
-NAME=${NAME:-windows-x64-mingw}
+set -euo pipefail
+
+NAME=$(config NAME)
 exec ../../../../_shared/package_windows_mingw.sh "$NAME"

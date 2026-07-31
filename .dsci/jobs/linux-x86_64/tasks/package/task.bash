@@ -1,3 +1,5 @@
 #!/bin/bash
-NAME=${NAME:-linux-x86_64}
+set -euo pipefail
+
+NAME=$(config NAME)
 exec ../../../../_shared/package_posix.sh "$NAME"

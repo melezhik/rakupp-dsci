@@ -1,3 +1,5 @@
 #!/bin/bash
-NAME=${NAME:-rakujs-wasm}
+set -euo pipefail
+
+NAME=$(config NAME)
 exec ../../../../_shared/package_rakujs.sh "$NAME"
