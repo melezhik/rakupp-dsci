@@ -1,0 +1,43 @@
+global:
+  container_image: ubuntu:24.04
+
+jobs:
+  - id: linux-x86_64
+    path: jobs/linux-x86_64/
+    params:
+      name: linux-x86_64
+
+  - id: macos-universal
+    path: jobs/macos-universal/
+    localhost: true
+    params:
+      name: macos-universal
+
+  - id: windows-msvc
+    path: jobs/windows-msvc/
+    localhost: true
+    params:
+      name: windows-msvc
+
+  - id: windows-mingw
+    path: jobs/windows-mingw/
+    localhost: true
+    params:
+      name: windows-x64-mingw
+      mingw: true
+
+  - id: wasm
+    path: jobs/wasm/
+    params:
+      name: rakujs-wasm
+
+  - id: gcc-portability
+    path: jobs/gcc-portability/
+    params:
+      name: linux-gcc
+
+  - id: openbsd
+    path: jobs/openbsd/
+    localhost: true
+    params:
+      name: openbsd-x86_64
