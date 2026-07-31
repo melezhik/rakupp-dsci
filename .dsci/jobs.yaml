@@ -6,18 +6,30 @@ jobs:
     path: jobs/linux-x86_64/
     params:
       name: linux-x86_64
+      cc: gcc
+      cxx: g++
+      mingw: false
+      os: linux
 
   - id: macos-universal
     path: jobs/macos-universal/
     localhost: true
     params:
       name: macos-universal
+      cc: clang
+      cxx: clang++
+      mingw: false
+      os: macos
 
   - id: windows-msvc
     path: jobs/windows-msvc/
     localhost: true
     params:
       name: windows-msvc
+      cc: cl
+      cxx: cl
+      mingw: false
+      os: windows
 
   - id: windows-mingw
     path: jobs/windows-mingw/
@@ -25,19 +37,34 @@ jobs:
     params:
       name: windows-x64-mingw
       mingw: true
+      cc: gcc
+      cxx: g++
+      os: windows
 
   - id: wasm
     path: jobs/wasm/
     params:
       name: rakujs-wasm
+      cc: emcc
+      cxx: em++
+      mingw: false
+      os: wasm
 
   - id: gcc-portability
     path: jobs/gcc-portability/
     params:
       name: linux-gcc
+      cc: gcc
+      cxx: g++
+      mingw: false
+      os: linux
 
   - id: openbsd
     path: jobs/openbsd/
     localhost: true
     params:
       name: openbsd-x86_64
+      cc: clang
+      cxx: clang++
+      mingw: false
+      os: openbsd
