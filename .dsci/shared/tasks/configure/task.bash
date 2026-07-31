@@ -18,7 +18,6 @@ if [ "${OS:-}" = "macos" ] || [ "${NAME:-}" = "macos-universal" ]; then
 fi
 
 if [ "${MINGW:-}" = "true" ] || [ "${mingw:-}" = "true" ]; then
-  # invoked from windows-mingw wrapper in an MSYS2 shell
   cmake -S . -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_EXE_LINKER_FLAGS=-static"
   exit 0
 fi
