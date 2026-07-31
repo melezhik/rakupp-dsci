@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/configure.sh
+run_task "configure"

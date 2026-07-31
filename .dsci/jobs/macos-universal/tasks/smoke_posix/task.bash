@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/smoke_posix.sh
+run_task "smoke_posix"

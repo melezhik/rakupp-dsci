@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/build_native.sh
+run_task "build_native"

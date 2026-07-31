@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/configure_gcc.sh
+run_task "configure_gcc"

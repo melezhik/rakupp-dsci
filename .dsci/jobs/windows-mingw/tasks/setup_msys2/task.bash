@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/setup_msys2.sh
+run_task "setup_msys2"

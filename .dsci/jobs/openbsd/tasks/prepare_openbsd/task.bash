@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/prepare_openbsd.sh
+run_task "prepare_openbsd"

@@ -1,2 +1,2 @@
 #!/bin/bash
-exec ../../../../_shared/install_layout.sh
+run_task "install_layout"
