@@ -3,26 +3,19 @@ set -euo pipefail
 
 echo "configure task (shared)"
 
-# Prefer job-provided params via config(), fallback to environment variables
-CC_CONF=$(config CC 2>/dev/null || true)
-CXX_CONF=$(config CXX 2>/dev/null || true)
-MINGW_CONF=$(config MINGW 2>/dev/null || true)
-OS_CONF=$(config OS 2>/dev/null || true)
+# Read job-provided params via config() — jobs.yaml provides these inputs
+CC=$(config cc)
+CXX=$(config cxx)
+MINGW_VAL=$(config mingw)
+OS_VAL=$(config os)
 
-if [ -n "${CC_CONF:-}" ]; then
-  export CC="$CC_CONF"
-elif [ -n "${CC:-}" ]; then
+# Export compilers if provided
+if [ -n "${CC:-}" ]; then
   export CC
 fi
-if [ -n "${CXX_CONF:-}" ]; then
-  export CXX="$CXX_CONF"
-elif [ -n "${CXX:-}" ]; then
+if [ -n "${CXX:-}" ]; then
   export CXX
 fi
-
-# Resolve MINGW/OS flags used below
-MINGW_VAL="${MINGW_CONF:-${MINGW:-${mingw:-}}}"
-OS_VAL="${OS_CONF:-${OS:-}}"
 
 # Special handling for macOS or mingw can be driven by the resolved OS/NAME flags:
 if [ "${OS_VAL:-}" = "macos" ] || [ "${NAME:-}" = "macos-universal" ]; then
